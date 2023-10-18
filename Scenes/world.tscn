@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfgqkabg3tjlj"]
+
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_503kp"]
+[ext_resource type="PackedScene" uid="uid://gakep14km71h" path="res://Scenes/desert_level.tscn" id="2_vvcsu"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_503kp")
+
+[node name="DesertLevel" parent="." instance=ExtResource("2_vvcsu")]
+
+[node name="Marker2D0" type="Marker2D" parent="."]
+position = Vector2(172, 331)
+
+[node name="Marker2D1" type="Marker2D" parent="."]
+position = Vector2(978, 328)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(45, 555)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(1109, 561)
+
+[connection signal="body_entered" from="DesertLevel" to="." method="_on_desert_level_body_entered"]
