@@ -69,6 +69,8 @@ func _ready() -> void:
 	# Add players to match number of connected joysticks. Parent
 	# sets `num_players` based on number of connected joysticks.
 	# If no parent, default to 4 joysticks for testing.
+	if use_keyboard:
+		num_players = 4
 	for player_index in range(num_players):
 		add_player(player_index)
 	

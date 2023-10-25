@@ -14,10 +14,10 @@ func _ready():
 func _process(_delta):
 	if use_keyboard:
 		look_at(get_global_mouse_position())
-		if rotation_degrees > 360:
-			rotation_degrees = 0
-		if rotation_degrees < 0:
-			rotation_degrees = 360
+		if rotation_degrees > 180:
+			rotation_degrees = -180
+		if rotation_degrees < -180:
+			rotation_degrees = 180
 	else:
 		_lookdir.y= Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_Y)
 		_lookdir.x= Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_X)
